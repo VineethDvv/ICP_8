@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+    <!-- CSS Icons -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script>
+    <script src="app.js"></script>
+    <style>
+        body{
+            background-color: #808080;
+        }
+        h1{
+            color: #337ab7;
+            font-weight: bold;
+            font-size: 3rem;
+        }
+    </style>
+    <style>
+        .button {
+            background-color: #e7e7e7;
+            border: none;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div ng-app="nodeJsApp" ng-controller="nodeJSController" class="container">
+    <h1 style="color: 	#e7e7e7;" class="text-center">FourSquare API</h1>
+    <div class="form-group">
+        <label>Location:</label>
+        <input type="text" class="form-control"  ng-model="location">
+    </div>
+    <div class="form-group">
+        <label>Search:</label>
+        <i></i><input type="text" class="form-control" ng-model="search">
+    </div>
+    <div class="text-center"><button class="button" ng-click="displayResults()">Show Results</button></div>
+    <div class="forResults" ng-model="divContent">
+        <ul>
+            <li ng-repeat="venue in venueList" ng-model="venueList">
+               {{venue.name}} <div></div> {{venue.location}}
+                <hr>
+            </li>
+        </ul>
+
+    </div>
+</div>
+</body>
+</html>
